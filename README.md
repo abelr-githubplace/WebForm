@@ -57,11 +57,9 @@ Last update: 30/05/2023
 
 ---
 
-```
 Note:  
     
 Phone number field will be updated shortly to account for phone numbers properly.
-```
 
 
 [^1]: The required fields show a red underline when invalid or empty.

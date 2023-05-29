@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+* {
+    --background-gradient-1:#450059;
+    --background-gradient-2:#000058;
+    --background-gradient-3:#580500;
+    --form-color:           #00000033;
+    --input-color:          #8DA9C433;
+    --border-color:         #8DA9C4;
+    --text-color:           #EEF4ED;
+
+    --invalid-answers: solid 3px red;
+    --valid-answers: solid 3px green;
+    --font-size: 18px;
+    --title-size: 24px;
+    --tiny-font-size: 12px;
+    --font-family: 'Bruno Ace', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background-gradient-1);
+    background: linear-gradient(349deg, 
+        var(--background-gradient-1) 0%, 
+        var(--background-gradient-2) 49%, 
+        var(--background-gradient-3) 100%
+    );
+    background-attachment: fixed;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: block;
+    position: absolute;
+    margin-top: 2vh;
+    align-self: flex-start;
+    font-size: var(--title-size);
+    font-weight: 100;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.form {
+    position: absolute;
+    padding: 30px;
+    overflow: hidden;
+    background-color: var(--form-color);
+    border: solid 1px var(--border-color);
+    border-radius: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+input, select, textarea {
+    overflow: hidden;
+    background-color: var(--input-color);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    width: 100%;
+    padding: 12px 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    transition: .6s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus, 
+input:hover, select:hover, textarea:hover {
+    background-color: var(--border-color);
+    color: black;
+}
+
+input[required=required]:invalid, 
+select[required=required]:invalid, 
+textarea[required=required]:invalid {
+    border-bottom: var(--invalid-answers)
+}
+
+input[required=required]:valid, 
+select[required=required]:valid, 
+textarea[required=required]:valid {
+    border-bottom: var(--valid-answers)
+}
+
+#submit {
+    overflow: hidden;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#submit input {
+    width: fit-content;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    margin-top: 25px;
+    background-color: var(--background-gradient-1);
+    transition: .6s ease-in-out;
+}
+
+#submit input:hover,
+#submit input:focus {
+    background-color: var(--background-gradient-3);
+    color: var(--text-color);
+}
+
+@media screen and (width <= 600px) {
+    body {
+        font-size: var(--tiny-font-size);
+    }
+
+    #submit input {
+        font-size: var(--tiny-font-size);
+    }
+}
+
+@media screen and (height <= 800px) {
+    body {
+        font-size: var(--tiny-font-size);
+    }
+
+    .title {
+        display: none;
+    }
+
+    .form {
+        width: 96vw;
+        height: 96vh;
+    }
+}

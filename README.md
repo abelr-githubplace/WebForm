@@ -45,21 +45,14 @@ Last update: 30/05/2023
     > Field is required[^1]
 
 7. **E-mail**  
-    _No validity check_
+    _Any e-mail address is considered valid_
 
 8. **Phone number**  
-    _No validity check_
-
-    >Field does not account properly for phone numbers with `plus sign` and/or `space`.
+    _Validy check is done with the RegExp pattern `\+[0-9]{2,3}? ([0-9])+`_
 
 9. **More information**  
     _No validity check_
 
----
-
-Note:  
-    
-Phone number field will be updated shortly to account for phone numbers properly.
 
 
 [^1]: The required fields show a red underline when invalid or empty.

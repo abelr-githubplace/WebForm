@@ -18,11 +18,11 @@
 }
 
 body {
-    overflow: hidden;
     margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
+    padding: 0 0 10em 0;
+    overflow-x: hidden;
+    width: 100dvw;
+    height: 100dvh;
     background: var(--background-gradient-1);
     background: linear-gradient(349deg, 
         var(--background-gradient-1) 0%, 
@@ -33,32 +33,36 @@ body {
     font-size: var(--font-size);
     font-family: var(--font-family);
     color: var(--text-color);
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
+    gap: 20px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .title {
     display: block;
-    position: absolute;
-    margin-top: 2vh;
+    margin-top: 2dvh;
     align-self: flex-start;
     font-size: var(--title-size);
     font-weight: 100;
     text-decoration: underline;
     text-underline-offset: 4px;
+    text-align: center;
 }
 
 .form {
-    position: absolute;
+    width: 60dvw;
+    height: fit-content;
     padding: 30px;
-    overflow: hidden;
     background-color: var(--form-color);
     border: solid 1px var(--border-color);
     border-radius: 20px;
     display: grid;
+    gap: 22px;
     justify-content: center;
-    align-items: center;
 }
 
 input, select, textarea {
@@ -81,9 +85,9 @@ input:hover, select:hover, textarea:hover {
     color: black;
 }
 
-input[required=required]:invalid, 
-select[required=required]:invalid, 
-textarea[required=required]:invalid {
+input:invalid, 
+select:invalid, 
+textarea:invalid {
     border-bottom: var(--invalid-answers)
 }
 
@@ -104,7 +108,7 @@ textarea[required=required]:valid {
     width: fit-content;
     font-size: var(--font-size);
     font-family: var(--font-family);
-    margin-top: 25px;
+    margin-top: 5px;
     background-color: var(--background-gradient-1);
     transition: .6s ease-in-out;
 }
@@ -120,6 +124,14 @@ textarea[required=required]:valid {
         font-size: var(--tiny-font-size);
     }
 
+    .title {
+        font-size: var(--font-size);
+    }
+
+    .form {
+        width: 90dvw;
+    }
+
     #submit input {
         font-size: var(--tiny-font-size);
     }
@@ -131,11 +143,6 @@ textarea[required=required]:valid {
     }
 
     .title {
-        display: none;
-    }
-
-    .form {
-        width: 96vw;
-        height: 96vh;
+        font-size: var(--font-size);
     }
 }
